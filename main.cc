@@ -20,6 +20,11 @@ inline double cal_parallel(const std::vector<std::string> &nums) {
 }
 
 int main(int argc, char *argv[]) {
+  if (argc != 2) {
+    std::cerr << "ERROR. invalid number of arguments\n" << std::endl;
+    return EXIT_FAILURE;
+  }
+
   std::string str(argv[1]);
 
   if (str.empty()) {
@@ -75,12 +80,11 @@ int main(int argc, char *argv[]) {
     ++i;
   }
 
-  if (stack.size() == 1) {
-    std::cout << stack.top() << std::endl;
-  } else {
+  if (stack.size() != 1) {
     std::cerr << "cannot parse string: " << str << std::endl;
     return EXIT_FAILURE;
   }
 
+  std::cout << stack.top() << std::endl;
   return EXIT_SUCCESS;
 }
