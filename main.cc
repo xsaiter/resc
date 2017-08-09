@@ -27,10 +27,6 @@ int main(int argc, char *argv[]) {
 
   std::string str(argv[1]);
 
-  if (str.empty()) {
-    return EXIT_SUCCESS;
-  }
-
   if (str == "-h" || str == "--help") {
     std::cout << "calculate total resistance in circuits\n"
               << "() - series, [] - parallel circuits\n"
