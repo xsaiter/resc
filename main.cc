@@ -20,7 +20,6 @@ inline double cal_parallel(const std::vector<std::string> &nums) {
 }
 
 int main(int argc, char *argv[]) {
-
   std::string str(argv[1]);
 
   if (str.empty()) {
