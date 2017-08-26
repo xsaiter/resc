@@ -12,7 +12,7 @@ inline double calc_series(const std::vector<std::string> &nums) {
       [](double a, const std::string &s) { return a + atof(s.c_str()); });
 }
 
-inline double cal_parallel(const std::vector<std::string> &nums) {
+inline double calc_parallel(const std::vector<std::string> &nums) {
   double val = std::accumulate(
       nums.begin(), nums.end(), 0.0,
       [](double a, const std::string &s) { return a + 1 / (atof(s.c_str())); });
@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
         nums.push_back(p);
       }
 
-      double val = c == "]" ? cal_parallel(nums) : calc_series(nums);
+      double val = c == "]" ? calc_parallel(nums) : calc_series(nums);
       stack.push(std::to_string(val));
     } else if (isdigit(c[0])) {
       std::ostringstream digs;
